@@ -31,10 +31,10 @@
 // //TIP There's much more in WebStorm to help you be more productive. Press <shortcut actionId="Shift"/> <shortcut actionId="Shift"/> and search for <b>Learn WebStorm</b> to open our learning hub with more things for you to try.
 
 // ==========================================
-// ALICE & BOB HOUSES - PROPERTY MODAL LOGIC
+// OLD PROPERTY CODE - KEPT FOR REFERENCE
 // ==========================================
 
-// Hardcoded property details data
+/*
 const properties = {
   'yellow-house': {
     title: 'Yellow Sunshine Villa',
@@ -45,6 +45,7 @@ const properties = {
     price: '$350,000',
     mapBbox: '11.3300,55.3900,11.3700,55.4100'
   },
+
   'green-house': {
     title: 'Green Eco Cottage',
     address: 'Forest Lane 8',
@@ -53,37 +54,160 @@ const properties = {
     size: '180 m²',
     price: '$420,000',
     mapBbox: '11.3600,54.6800,11.4200,54.7100'
-  },
+  }
 };
+*/
 
-// Open property modal
-window.openModal = function (propertyKey) {
-  const property = properties[propertyKey];
-  if (!property) return;
 
-  document.getElementById('modal-title').innerText = property.title;
-  document.getElementById('modal-address').innerText =
-    property.address + ' • ' + property.size + ' • ' + property.price;
-  document.getElementById('modal-description').innerText = property.description;
+// ==========================================
+// ALICE & BOB HOUSES - JSON PROPERTY DATA
+// ==========================================
 
-  // Update map source inside the modal
-  const mapElement = document.getElementById('modal-map');
-  if (mapElement && property.mapBbox) {
-    mapElement.src = `https://www.openstreetmap.org/export/embed.html?bbox=${property.mapBbox}&layer=mapnik`;
+let houses = [];
+
+
+// Load houses from houses.json
+async function loadHouses() {
+  try {
+    const response = await fetch("Alice-n-Bob-Houses/houses.json");
+
+    if (!response.ok) {
+      throw new Error("Could not load houses.json");
+    }
+
+    houses = await response.json();
+
+    displayHouses();
+
+  } catch (error) {
+    console.error("Error loading houses:", error);
+  }
+}
+
+
+// ==========================================
+// CREATE PROPERTY CARDS
+// ==========================================
+
+function displayHouses() {
+  const propertyList = document.getElementById("propertyList");
+
+  if (!propertyList) {
+    console.error("Could not find propertyList");
+    return;
   }
 
-  document.getElementById('details-modal').style.display = 'flex';
+  propertyList.innerHTML = "";
+
+  houses.forEach(function (house) {
+
+    const card = document.createElement("article");
+
+    card.classList.add("property-card");
+
+    card.innerHTML = `
+      <img src="${house.image}" alt="${house.title}">
+
+      <div class="property-info">
+        <h3>${house.title}</h3>
+
+        <p>${house.address}</p>
+
+        <p>
+          <strong>Type:</strong>
+          ${house.propertyType}
+        </p>
+
+        <p>
+          <strong>Size:</strong>
+          ${house.areaM2} m²
+        </p>
+
+        <p>
+          <strong>Bedrooms:</strong>
+          ${house.bedrooms}
+        </p>
+
+        <p>
+          <strong>Bathrooms:</strong>
+          ${house.bathrooms}
+        </p>
+
+        <p>
+          <strong>Price:</strong>
+          ${house.priceDKK.toLocaleString("da-DK")} DKK
+        </p>
+      </div>
+    `;
+
+    card.addEventListener("click", function () {
+      openModal(house.id);
+    });
+
+    propertyList.appendChild(card);
+  });
+}
+
+
+// ==========================================
+// OPEN PROPERTY MODAL
+// ==========================================
+
+window.openModal = function (houseId) {
+
+  const property = houses.find(function (house) {
+    return house.id === Number(houseId);
+  });
+
+  if (!property) {
+    return;
+  }
+
+  document.getElementById("modal-title").innerText =
+    property.title;
+
+  document.getElementById("modal-address").innerText =
+    property.address +
+    " • " +
+    property.areaM2 +
+    " m² • " +
+    property.priceDKK.toLocaleString("da-DK") +
+    " DKK";
+
+  document.getElementById("modal-description").innerText =
+    property.description;
+
+  document.getElementById("details-modal").style.display =
+    "flex";
 };
 
-// Close modal
+
+// ==========================================
+// CLOSE PROPERTY MODAL
+// ==========================================
+
 window.closeModal = function () {
-  document.getElementById('details-modal').style.display = 'none';
+  document.getElementById("details-modal").style.display =
+    "none";
 };
 
-// Close modal when clicking outside the content box
+
+// Close modal by clicking outside it
 window.onclick = function (event) {
-  const modal = document.getElementById('details-modal');
+
+  const modal =
+    document.getElementById("details-modal");
+
   if (event.target === modal) {
     closeModal();
   }
 };
+
+
+// ==========================================
+// LOAD HOUSES WHEN PAGE OPENS
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+  loadHouses();
+});

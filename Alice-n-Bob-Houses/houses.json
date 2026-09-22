@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Nordic Lake House",
+    "image": "/houses/house-01.jpg.png",
+    "address": "Søbakken 14, 8600 Silkeborg",
+    "priceDKK": 4295000,
+    "areaM2": 168,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "propertyType": "Villa",
+    "description": "A modern Scandinavian home surrounded by nature with large windows, open living spaces and beautiful views across the landscape."
+  },
+  {
+    "id": 2,
+    "title": "Azure Coast Villa",
+    "image": "/houses/house-02.jpg.png",
+    "address": "Strandvejen 82, 2900 Hellerup",
+    "priceDKK": 8995000,
+    "areaM2": 214,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "propertyType": "Coastal Villa",
+    "description": "An elegant coastal villa with bright interiors, a large terrace and peaceful surroundings close to the water."
+  },
+  {
+    "id": 3,
+    "title": "Red Rock Residence",
+    "image": "/houses/house-03.jpg.png",
+    "address": "Klippevej 21, 3770 Allinge",
+    "priceDKK": 5195000,
+    "areaM2": 187,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "propertyType": "Modern Villa",
+    "description": "A distinctive modern home with dramatic views, spacious outdoor areas and a luxurious open-plan interior."
+  },
+  {
+    "id": 4,
+    "title": "Alpine Glass House",
+    "image": "/houses/house-04.jpg.png",
+    "address": "Møllebakken 7, 7100 Vejle",
+    "priceDKK": 6495000,
+    "areaM2": 205,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "propertyType": "Luxury Villa",
+    "description": "A striking glass-fronted home offering panoramic views, spacious living areas and a warm modern design."
+  },
+  {
+    "id": 5,
+    "title": "Mountain View Retreat",
+    "image": "/houses/house-05.jpg.png",
+    "address": "Fjordvej 36, 6300 Gråsten",
+    "priceDKK": 5895000,
+    "areaM2": 194,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "propertyType": "Retreat",
+    "description": "A peaceful retreat with large windows, natural materials and impressive views over the surrounding landscape."
+  },
+  {
+    "id": 6,
+    "title": "Tuscan Garden Estate",
+    "image": "/houses/house-06.jpg.png",
+    "address": "Vinmarken 12, 5600 Faaborg",
+    "priceDKK": 7495000,
+    "areaM2": 236,
+    "bedrooms": 5,
+    "bathrooms": 3,
+    "propertyType": "Country Estate",
+    "description": "A spacious countryside estate with stone details, landscaped gardens, generous outdoor living areas and a private pool."
+  },
+  {
+    "id": 7,
+    "title": "Autumn Ridge House",
+    "image": "/houses/house-07.jpg.png",
+    "address": "Skovbrynet 44, 3400 Hillerød",
+    "priceDKK": 5695000,
+    "areaM2": 181,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "propertyType": "Forest Villa",
+    "description": "A modern forest home surrounded by trees with floor-to-ceiling windows, a large terrace and warm natural materials."
+  },
+  {
+    "id": 8,
+    "title": "Seaside Cottage",
+    "image": "/houses/house-08.jpg.png",
+    "address": "Kystvejen 18, 4780 Stege",
+    "priceDKK": 4595000,
+    "areaM2": 159,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "propertyType": "Coastal House",
+    "description": "A charming coastal property with traditional architecture, a spacious veranda and beautiful views toward the sea."
+  },
+  {
+    "id": 9,
+    "title": "Fjordview Home",
+    "image": "/houses/house-09.jpg.png",
+    "address": "Fjordbakken 9, 9500 Hobro",
+    "priceDKK": 3895000,
+    "areaM2": 146,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "propertyType": "Nordic House",
+    "description": "A cosy Nordic-inspired home positioned above the water with scenic views, traditional details and a relaxing terrace."
+  },
+  {
+    "id": 10,
+    "title": "Sunset Courtyard Villa",
+    "image": "/houses/house-10.jpg.png",
+    "address": "Solsortevej 31, 4700 Næstved",
+    "priceDKK": 4795000,
+    "areaM2": 238,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "propertyType": "Courtyard Villa",
+    "description": "A spacious villa with warm architectural details, a private courtyard, landscaped outdoor areas and plenty of room for entertaining."
+  }
+]

@@ -57,29 +57,21 @@
 <!-- PROPERTY LISTINGS -->
 <p>Currently available houses</p>
 
-<section class="property-list">
+<section class="property-list" id="propertyList">
 
+  <!-- Properties are loaded from houses.json using main.js -->
 
-  <!-- Properties go here. Green tier -->
-  <!-- FIXME oliver wants to move this to javascript (main.js) -->
-  <article class="property-card" onclick="openModal('houses')">
-    <img src="https://placehold.co/300x200/90ee90/282a36?text=Houses+For+Sale" alt="House Thumbnail">
-    <div class="property-info">
-      <h3>Dickens Allé (Søborg)</h3>
-      <p><strong>Size:</strong> 180 m²</p>
-      <p><strong>Price:</strong> 420 0000kr.</p>
-    </div>
-  </article>
-
-  <!-- NOTE Yellow House - IGNORE!! this is just residual code meant to be kept for reference/example purposes only.)
-    <article class="property-card" onclick="openModal('yellow-house')">
+  <!-- NOTE Yellow House - IGNORE!! this is just residual code meant to be kept for reference/example purposes only.
+  <article class="property-card" onclick="openModal('yellow-house')">
     <img src="https://placehold.co/300x200/F1FA8C/282A36?text=Yellow+House" alt="Yellow House Thumbnail">
     <div class="property-info">
       <h3>Sunshine Way 12</h3>
       <p><strong>Size:</strong> 145 m²</p>
       <p><strong>Price:</strong> $350,000</p>
     </div>
-  </article> -->
+  </article>
+  -->
+
 </section> <!-- DO NOT REMOVE!! -->
 
 
@@ -99,13 +91,11 @@
       <!-- Open source Map Embedding -->
       <div class="map-container">
         <h3>Location Map</h3>
-        <iframe
-                id="modal-map"
-                width="100%"
-                height="250"
-                <!-- CHANGED coordinates from Copenhagen -->
-                src="https://www.openstreetmap.org/export/embed.html?bbox=11.3,55.3,11.4,55.4&layer=mapnik">
-        </iframe>
+        <!-- CHANGED coordinates from Copenhagen -->
+<iframe
+    height="250"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=11.3,55.3,11.4,55.4&layer=mapnik">
+</iframe>
       <!--</div>-->
 
       <!-- NOTE to self, research this topic later -->
